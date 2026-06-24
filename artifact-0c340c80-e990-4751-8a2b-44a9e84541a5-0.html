@@ -1,0 +1,1473 @@
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<style>
+								body {
+									background-color: white; /* Ensure the iframe has a white background */
+								}
+
+								
+							</style>
+                        </head>
+                        <body>
+                            <!-- generated HTML -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --primary: #0a3d62;
+    --primary-light: #1a5276;
+    --accent: #e74c3c;
+    --accent2: #f39c12;
+    --accent3: #27ae60;
+    --accent4: #8e44ad;
+    --bg: #f0f4f8;
+    --card: #ffffff;
+    --text: #1a2332;
+    --text-muted: #5a6a7a;
+    --border: #d1dce8;
+    --shadow: 0 4px 20px rgba(10,61,98,0.10);
+    --shadow-hover: 0 8px 32px rgba(10,61,98,0.18);
+    --tab1: #0a3d62;
+    --tab2: #c0392b;
+    --tab3: #1e8449;
+    --nav-height: 64px;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 15px;
+  }
+
+  /* ─── TOP HEADER ─── */
+  .top-header {
+    background: linear-gradient(135deg, #0a3d62 0%, #1a5276 60%, #154360 100%);
+    color: white;
+    padding: 0 32px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .header-logo {
+    width: 44px; height: 44px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; font-weight: 800; letter-spacing: -1px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+  }
+  .header-title { font-size: 18px; font-weight: 700; letter-spacing: -0.3px; }
+  .header-sub { font-size: 11px; opacity: 0.70; margin-top: 2px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .header-badge {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  /* ─── TAB NAV ─── */
+  .tab-nav {
+    background: white;
+    display: flex;
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 72px;
+    z-index: 99;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    overflow-x: auto;
+  }
+  .tab-nav::-webkit-scrollbar { height: 3px; }
+  .tab-nav::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  .tab-btn {
+    flex: 1;
+    min-width: 200px;
+    padding: 0 24px;
+    height: 56px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text-muted);
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+    white-space: nowrap;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .tab-btn:hover { background: #f5f8fb; color: var(--text); }
+  .tab-btn.active { color: white; border-bottom-color: transparent; }
+  .tab-btn.active.t1 { background: var(--tab1); }
+  .tab-btn.active.t2 { background: var(--tab2); }
+  .tab-btn.active.t3 { background: var(--tab3); }
+  .tab-icon { font-size: 20px; }
+  .tab-doc-id { font-size: 10px; font-weight: 500; opacity: 0.7; margin-top: 1px; }
+
+  /* ─── CONTENT ─── */
+  .tab-content { display: none; padding: 32px; max-width: 1280px; margin: 0 auto; }
+  .tab-content.active { display: block; }
+
+  /* ─── HERO BANNER ─── */
+  .hero {
+    border-radius: 18px;
+    padding: 36px 40px;
+    color: white;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,0.12);
+    border-radius: 18px;
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .hero h1 { font-size: 26px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.5px; }
+  .hero p { font-size: 14px; opacity: 0.88; max-width: 640px; line-height: 1.6; }
+  .hero-stats { display: flex; gap: 24px; margin-top: 24px; flex-wrap: wrap; }
+  .hero-stat { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.25); border-radius: 12px; padding: 12px 20px; text-align: center; }
+  .hero-stat-num { font-size: 22px; font-weight: 800; }
+  .hero-stat-lbl { font-size: 11px; opacity: 0.80; margin-top: 2px; }
+
+  /* ─── SECTION LABEL ─── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 14px;
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* ─── GRID ─── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  @media (max-width: 900px) {
+    .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .grid-3, .grid-4, .grid-2 { grid-template-columns: 1fr; }
+    .tab-content { padding: 16px; }
+    .hero { padding: 24px 20px; }
+    .top-header { padding: 0 16px; }
+  }
+
+  /* ─── CARD ─── */
+  .card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+  .card-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  /* ─── ACCORDION ─── */
+  .accordion { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-bottom: 12px; }
+  .acc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    background: white;
+    user-select: none;
+    transition: background 0.15s;
+    gap: 12px;
+  }
+  .acc-header:hover { background: #f5f8fb; }
+  .acc-header.open { border-bottom: 1px solid var(--border); }
+  .acc-left { display: flex; align-items: center; gap: 12px; flex: 1; }
+  .acc-icon { font-size: 20px; flex-shrink: 0; }
+  .acc-label { flex: 1; }
+  .acc-count { font-size: 11px; font-weight: 500; color: var(--text-muted); background: var(--bg); padding: 2px 8px; border-radius: 20px; }
+  .acc-arrow { font-size: 12px; color: var(--text-muted); transition: transform 0.25s; flex-shrink: 0; }
+  .acc-header.open .acc-arrow { transform: rotate(180deg); }
+  .acc-body { display: none; padding: 16px 20px; background: #fafcff; }
+  .acc-body.open { display: block; }
+
+  /* ─── RULE ITEMS ─── */
+  .rule-group { margin-bottom: 14px; }
+  .rule-group-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .rule-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    border-left: 3px solid var(--border);
+    font-size: 13px;
+    line-height: 1.55;
+    transition: border-color 0.2s;
+  }
+  .rule-item:hover { border-left-color: var(--primary); }
+  .rule-item.mandatory { border-left-color: #e74c3c; }
+  .rule-item.caution { border-left-color: #f39c12; }
+  .rule-item.required { border-left-color: #2980b9; }
+  .rule-item.legal { border-left-color: #8e44ad; }
+  .rule-item.critical { border-left-color: #c0392b; background: #fff5f5; }
+  .rule-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); margin-top: 7px; flex-shrink: 0; }
+  .rule-tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .tag-mandatory { background: #fdecea; color: #c0392b; }
+  .tag-caution { background: #fef9e7; color: #d68910; }
+  .tag-required { background: #eaf4fb; color: #1a6fa0; }
+  .tag-legal { background: #f5eef8; color: #7d3c98; }
+  .tag-critical { background: #fdecea; color: #c0392b; }
+  .tag-permit { background: #eafaf1; color: #1e8449; }
+  .tag-banned { background: #fdecea; color: #922b21; }
+
+  /* ─── PHASE STEPS ─── */
+  .phase-grid { display: flex; flex-direction: column; gap: 12px; }
+  .phase-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .phase-header {
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s;
+  }
+  .phase-header:hover { background: #f8fafc; }
+  .phase-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 14px; color: white;
+    flex-shrink: 0;
+  }
+  .phase-info { flex: 1; }
+  .phase-title { font-weight: 700; font-size: 14px; }
+  .phase-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .phase-body { display: none; padding: 14px 18px 18px; border-top: 1px solid var(--border); background: #fafcff; }
+  .phase-body.open { display: block; }
+  .phase-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .phase-step-num {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ─── TABLE ─── */
+  .tbl-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th {
+    background: var(--primary);
+    color: white;
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+  tr:nth-child(even) td { background: #f5f8fb; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+  tr:last-child td { border-bottom: none; }
+
+  /* ─── PSM WHEEL ─── */
+  .psm-element {
+    background: white;
+    border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.2s;
+    cursor: default;
+  }
+  .psm-element:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+  .psm-el-num {
+    font-size: 11px;
+    font-weight: 800;
+    color: white;
+    background: var(--primary);
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .psm-el-name { font-size: 13.5px; font-weight: 700; margin-bottom: 6px; }
+  .psm-el-desc { font-size: 12px; color: var(--text-muted); line-height: 1.55; }
+  .pillar-tech .psm-el-num { background: #1a5276; }
+  .pillar-fac .psm-el-num { background: #1e8449; }
+  .pillar-per .psm-el-num { background: #7d3c98; }
+
+  /* ─── INCIDENT TABLE ─── */
+  .incident-sev {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+  .sev-critical { background: #fdecea; color: #c0392b; }
+  .sev-major { background: #fef5e7; color: #ca6f1e; }
+
+  /* ─── CAPABILITY ─── */
+  .cap-bar-wrap { margin-top: 6px; }
+  .cap-bar-bg { height: 8px; background: var(--bg); border-radius: 8px; overflow: hidden; }
+  .cap-bar-fill { height: 100%; border-radius: 8px; transition: width 0.8s ease; }
+
+  /* ─── ROLE CARDS ─── */
+  .role-card {
+    background: white;
+    border-radius: 12px;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .role-icon { font-size: 28px; margin-bottom: 10px; }
+  .role-name { font-size: 13.5px; font-weight: 700; margin-bottom: 8px; }
+  .role-duties { list-style: none; }
+  .role-duties li { font-size: 12px; color: var(--text-muted); margin-bottom: 5px; padding-left: 14px; position: relative; line-height: 1.5; }
+  .role-duties li::before { content: '›'; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+
+  /* ─── SPECIAL WORK BADGES ─── */
+  .sw-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (max-width: 900px) { .sw-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .sw-grid { grid-template-columns: 1fr; } }
+  .sw-card {
+    background: white;
+    border-radius: 12px;
+    padding: 18px 16px;
+    border: 1px solid var(--border);
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .sw-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+  .sw-card.active-card { border-color: currentColor; }
+  .sw-icon { font-size: 28px; margin-bottom: 8px; }
+  .sw-name { font-size: 12px; font-weight: 700; }
+  .sw-detail {
+    display: none;
+    margin-top: 16px;
+    background: white;
+    border-radius: 12px;
+    padding: 20px 22px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .sw-detail.open { display: block; }
+  .sw-detail-title { font-size: 15px; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .sw-req-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; margin-bottom: 7px; line-height: 1.5; }
+  .sw-req-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+  /* ─── RACI ─── */
+  .raci-r { background:#fdecea;color:#c0392b; font-weight:700; }
+  .raci-a { background:#fef9e7;color:#ca6f1e; font-weight:700; }
+  .raci-c { background:#eaf4fb;color:#1a5276; font-weight:700; }
+  .raci-i { background:#f0f4f8;color:#566573; font-weight:600; }
+  .raci-cell { text-align:center; padding: 8px 10px !important; }
+  .raci-pill { display:inline-block; padding:2px 10px; border-radius:20px; font-size:12px; }
+
+  /* ─── VALIDITY BOX ─── */
+  .validity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width:600px) { .validity-grid { grid-template-columns: 1fr; } }
+  .validity-item {
+    background: white;
+    border-radius: 10px;
+    padding: 14px 16px;
+    border-left: 4px solid var(--primary);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .validity-item strong { display: block; font-size: 13.5px; margin-bottom: 4px; }
+
+  /* ─── ALERT NOTICE ─── */
+  .alert {
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 13px;
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .alert-warn { background: #fef9e7; border-left: 4px solid #f39c12; }
+  .alert-danger { background: #fdecea; border-left: 4px solid #e74c3c; }
+  .alert-info { background: #eaf4fb; border-left: 4px solid #2980b9; }
+  .alert-success { background: #eafaf1; border-left: 4px solid #27ae60; }
+  .alert-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+</style>
+
+<!-- TOP HEADER -->
+<div class="top-header">
+  <div class="header-left">
+    <div class="header-logo">LSP</div>
+    <div>
+      <div class="header-title">Long Son Petrochemicals — HSSE Portal</div>
+      <div class="header-sub">OHS for Contractor · Permit to Work · Process Safety Management</div>
+    </div>
+  </div>
+  <div class="header-badge">Internal Use Only</div>
+</div>
+
+<!-- TAB NAV -->
+<div class="tab-nav">
+  <button class="tab-btn t1 active" onclick="switchTab(0)">
+    <span class="tab-icon">🦺</span>
+    <div>
+      <div>OHS for Contractor</div>
+      <div class="tab-doc-id">HS-D-2000-006 · Rev 0</div>
+    </div>
+  </button>
+  <button class="tab-btn t2" onclick="switchTab(1)">
+    <span class="tab-icon">📋</span>
+    <div>
+      <div>Permit to Work (PTW)</div>
+      <div class="tab-doc-id">HS-P-2000-001 · Rev 3</div>
+    </div>
+  </button>
+  <button class="tab-btn t3" onclick="switchTab(2)">
+    <span class="tab-icon">⚙️</span>
+    <div>
+      <div>PSM Overview</div>
+      <div class="tab-doc-id">PSM Awareness · SCGC × LSP</div>
+    </div>
+  </button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     TAB 1 — OHS FOR CONTRACTOR
+═══════════════════════════════════════════════════════ -->
+<div class="tab-content active" id="tab0">
+  <!-- Hero -->
+  <div class="hero" style="background: linear-gradient(135deg,#0a3d62,#1a5276);">
+    <div class="hero-content">
+      <h1>🦺 Safe Work Practice (SWP)</h1>
+      <p>Occupational Health & Safety standards for all contractors operating within Long Son Petrochemicals. 19 work areas, 120+ detailed rules, structured across 6 evaluation dimensions.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">19</div><div class="hero-stat-lbl">SWP Areas</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">120+</div><div class="hero-stat-lbl">Detailed Rules</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">6</div><div class="hero-stat-lbl">Evaluation Factors</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-lbl">Risk Levels</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="section-label">📌 Evaluation Factors & Rule Tags</div>
+  <div class="grid-3" style="margin-bottom:20px;">
+    <div class="card" style="padding:14px 16px;">
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="font-size:12px;background:#eef2f7;padding:4px 10px;border-radius:20px;">👷 Human</span>
+        <span style="font-size:12px;background:#eef2f7;padding:4px 10px;border-radius:20px;">📋 Method</span>
+        <span style="font-size:12px;background:#eef2f7;padding:4px 10px;border-radius:20px;">📦 Material</span>
+        <span style="font-size:12px;background:#eef2f7;padding:4px 10px;border-radius:20px;">⚙️ Machinery</span>
+        <span style="font-size:12px;background:#eef2f7;padding:4px 10px;border-radius:20px;">🌿 Environment</span>
+        <span style="font-size:12px;background:#eef2f7;padding:4px 10px;border-radius:20px;">🚨 Emergency</span>
+      </div>
+    </div>
+    <div class="card" style="padding:14px 16px;grid-column:span 2;">
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span class="rule-tag tag-mandatory">Mandatory</span>
+        <span class="rule-tag tag-caution">Caution</span>
+        <span class="rule-tag tag-required">Required</span>
+        <span class="rule-tag tag-legal">Legal</span>
+        <span class="rule-tag tag-critical">Critical</span>
+        <span class="rule-tag tag-permit">Permit</span>
+        <span class="rule-tag tag-banned">Banned</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">🏋️ Work Categories — Click to Expand</div>
+
+  <!-- Accordion: Lifting Work -->
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-left"><span class="acc-icon">🏋️</span><div class="acc-label"><div style="font-weight:700;">Lifting Work — §7.1</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Crane operations, rigging, signal persons</div></div></div>
+      <span class="acc-count">9 rules</span><span class="acc-arrow">▼</span>
+    </div>
+    <div class="acc-body">
+      <div class="rule-group"><div class="rule-group-title">👷 Human</div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>All personnel (crane operator, signal person, rigger, crane supervisor) must hold legally certified training and be registered with LSP HSSE sticker.</div><span class="rule-tag tag-mandatory">Mandatory</span></div>
+        <div class="rule-item"><div class="rule-dot"></div><div>Blind lifting in open area: 1 signal person; near plant equipment/buildings: min. 2 signal persons + 2 flagmen at front/rear of crane.</div></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">📋 Method</div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>Prepare a Lifting Plan (owner's form) before each lifting shift; survey and barricade the area, hang warning signs before commencing permit.</div><span class="rule-tag tag-mandatory">Mandatory</span></div>
+        <div class="rule-item"><div class="rule-dot"></div><div>Do not lift objects with unknown weight/no calculation; lifting equipment must clearly display SWL/WLL.</div></div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>No lifting during rain/storm; crane near high-voltage lines must maintain ≥5 m clearance; retract boom when not operating.</div><span class="rule-tag tag-mandatory">Mandatory</span></div>
+        <div class="rule-item caution"><div class="rule-dot" style="background:#f39c12;"></div><div>Night lifting must provide sufficient working illumination.</div><span class="rule-tag tag-caution">Caution</span></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">⚙️ Machinery</div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>Cranes and lifting equipment must undergo annual 3rd-party certification AND LSP Maintenance inspection with sticker before use; daily inspection with records.</div><span class="rule-tag tag-required">Required</span></div>
+        <div class="rule-item legal"><div class="rule-dot" style="background:#8e44ad;"></div><div>High-risk cranes must notify BRVT DOLISA before bringing into LSP — per Article 16, Decree 44/2016/NDCP.</div><span class="rule-tag tag-legal">Legal</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion: Working at Height -->
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-left"><span class="acc-icon">🧗</span><div class="acc-label"><div style="font-weight:700;">Working at Height — §7.4</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Fall prevention, harness, safety net</div></div></div>
+      <span class="acc-count">10 rules</span><span class="acc-arrow">▼</span>
+    </div>
+    <div class="acc-body">
+      <div class="rule-group"><div class="rule-group-title">👷 Human</div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>Mandatory full-body Safety Harness + Double Lanyard, 100% tie-off at heights. Anchor point load-rated ≥15 kN.</div><span class="rule-tag tag-mandatory">Mandatory</span></div>
+        <div class="rule-item"><div class="rule-dot"></div><div>Supervisor/Safety Officer/Job Owner must closely monitor throughout the work. Observer stationed at blind spots.</div></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">📋 Method</div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>Load-bearing material rated ≥120 kg/m² or install temporary guardrails.</div><span class="rule-tag tag-required">Required</span></div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>Safe distance from power lines: 2.4m (<12kV) / 3.0m (<33kV) / 3.3m (<69kV) / 3.9m (<115kV) / 5.3m (<230kV).</div><span class="rule-tag tag-required">Required</span></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">📦 Material</div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>Safety Net and Safety Life Line must be load tested at 2× person's weight before use.</div><span class="rule-tag tag-mandatory">Mandatory</span></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">🌿 Environment</div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>Prohibited during thunderstorm, heavy rain, or insufficient lighting.</div><span class="rule-tag tag-mandatory">Mandatory</span></div>
+        <div class="rule-item"><div class="rule-dot"></div><div>Barricade below: ≥2m (height <12m) / ≥3m (height ≥12m).</div></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">🚨 Emergency</div>
+        <div class="rule-item critical"><div class="rule-dot" style="background:#c0392b;"></div><div>Safety Net below work area required. Personnel below must wear hard hats. Work on pillars/tanks/stacks: mandatory guardrail + lifeline + harness.</div><span class="rule-tag tag-critical">Critical</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion: Scaffolding & Ladders -->
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-left"><span class="acc-icon">🪜</span><div class="acc-label"><div style="font-weight:700;">Scaffolding & Ladders — §7.5 / §7.17</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Erection, inspection, Civil Engineer certification</div></div></div>
+      <span class="acc-count">14 rules</span><span class="acc-arrow">▼</span>
+    </div>
+    <div class="acc-body">
+      <div class="rule-group"><div class="rule-group-title">👷 Human</div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>Assembly/dismantling: only 3rd-party certified personnel. Women prohibited on scaffolding >10m.</div><span class="rule-tag tag-mandatory">Mandatory</span></div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>Persons with hypertension, heart disease, epilepsy, or acrophobia are prohibited from working on scaffolding.</div><span class="rule-tag tag-banned">Banned</span></div>
+        <div class="rule-item"><div class="rule-dot"></div><div>Supervisor + Safety Lead must remain on site continuously during assembly/dismantling.</div></div>
+        <div class="rule-item caution"><div class="rule-dot" style="background:#f39c12;"></div><div>Ladder: max 10 min continuous use; working point ≤5m; always 3-point contact when climbing/descending.</div><span class="rule-tag tag-caution">Caution</span></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">📋 Method</div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>Work Permit + Risk Assessment before erection. Scaffold inspection every ≤7 days by competent person, or after any abnormal event.</div><span class="rule-tag tag-permit">Permit</span></div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>Transfer scaffolding equipment hand-to-hand — NEVER stand on same vertical axis within falling-object zone.</div><span class="rule-tag tag-mandatory">Mandatory</span></div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>Civil Engineer certification: 12m–21m → Associate; >21m → Professional Civil Engineer; load >200kg → Associate Civil Engineer.</div><span class="rule-tag tag-required">Required</span></div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>Clearance from power lines: ≥2.4m (50V–12kV) / ≥3.0m (12–33kV) / ≥3.9m (69–115kV).</div><span class="rule-tag tag-required">Required</span></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">📦 Material</div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>Scaffold material per BS 1139; solid wooden planks with toe board ≥10cm; guardrail: top 90–110cm, mid-rail 45–55cm.</div><span class="rule-tag tag-required">Required</span></div>
+        <div class="rule-item"><div class="rule-dot"></div><div>Color tag (Tagging) system — inspected and recorded at LSP Maintenance.</div></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">🚨 Emergency</div>
+        <div class="rule-item critical"><div class="rule-dot" style="background:#c0392b;"></div><div>Safety Net load test at 2× person's weight. Do NOT pull equipment along guardrail — will damage it.</div><span class="rule-tag tag-critical">Critical</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion: MEWPs -->
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-left"><span class="acc-icon">🚡</span><div class="acc-label"><div style="font-weight:700;">MEWPs — Scissor / Boom Lift — §7.7</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Mobile elevated work platforms</div></div></div>
+      <span class="acc-count">6 rules</span><span class="acc-arrow">▼</span>
+    </div>
+    <div class="acc-body">
+      <div class="rule-group"><div class="rule-group-title">👷 Human</div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>MEWP operator must be trained and certified; mandatory Safety Harness + Double Lanyard when working at height.</div><span class="rule-tag tag-mandatory">Mandatory</span></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">📋 Method</div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>Do not reposition/move to new work point without lowering platform to ground first; prohibited on slopes >30°.</div><span class="rule-tag tag-banned">Banned</span></div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>Do not exceed SWL; NEVER climb outside the defensive line (guardrail).</div><span class="rule-tag tag-banned">Banned</span></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">⚙️ Machinery</div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>MEWP must have audible and visual warning signals active at all times during operation.</div><span class="rule-tag tag-required">Required</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion: LOTO -->
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-left"><span class="acc-icon">🔒</span><div class="acc-label"><div style="font-weight:700;">LOTO — Lock-out / Tag-out — §7.12</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Energy isolation, personal red locks</div></div></div>
+      <span class="acc-count">8 rules</span><span class="acc-arrow">▼</span>
+    </div>
+    <div class="acc-body">
+      <div class="rule-group"><div class="rule-group-title">👷 Human</div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>Each individual applies their own Personal Red Lock before working. Only the owner may remove it.</div><span class="rule-tag tag-mandatory">Mandatory</span></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">📋 Method</div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>Work Permit required; shut down machine → cut main switch → hang "DO NOT OPERATE – Personnel Working" sign → apply LOTO per owner's procedure.</div><span class="rule-tag tag-permit">Permit</span></div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>Remove hazardous parts first (pinch points, sharp points, gears); use only standard tools — no improvised/modified tools.</div><span class="rule-tag tag-required">Required</span></div>
+        <div class="rule-item caution"><div class="rule-dot" style="background:#f39c12;"></div><div>Changes to the method vs. initial setup → re-evaluate JSA before continuing.</div><span class="rule-tag tag-caution">Caution</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion: Electrical Work -->
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-left"><span class="acc-icon">⚡</span><div class="acc-label"><div style="font-weight:700;">Electrical Work — §7.14</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">De-energize, LOTO, ELCB</div></div></div>
+      <span class="acc-count">8 rules</span><span class="acc-arrow">▼</span>
+    </div>
+    <div class="acc-body">
+      <div class="rule-group"><div class="rule-group-title">👷 Human</div>
+        <div class="rule-item legal"><div class="rule-dot" style="background:#8e44ad;"></div><div>Electrical workers trained per Circular 05/2021/TT-BCT; minimum 2 persons when electrical contact risk is present.</div><span class="rule-tag tag-legal">Legal</span></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">📋 Method</div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>De-energize before work (performed by owner); LOTO from ≥24V upward.</div><span class="rule-tag tag-permit">Permit</span></div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>Confirm system is de-energized before starting; capacitors/transformers must be discharged prior to work.</div><span class="rule-tag tag-mandatory">Mandatory</span></div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>PROHIBITED: modifying electrical equipment; plugging 220V/380V directly at production areas (except lighting and standard hand tools).</div><span class="rule-tag tag-banned">Banned</span></div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>Newly installed electrical equipment: must install ELCB ≤30mA and be inspected/approved by LSP Electrical Dept (PSSR/Audit team).</div><span class="rule-tag tag-required">Required</span></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">⚙️ Machinery</div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>All electrical equipment certified by LSP Electrical Dept; grounding at designated owner points.</div><span class="rule-tag tag-required">Required</span></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">🚨 Emergency</div>
+        <div class="rule-item critical"><div class="rule-dot" style="background:#c0392b;"></div><div>CO₂/dry powder extinguisher (NOT water) at electrical areas. All personnel know CPR and electrical shock first aid.</div><span class="rule-tag tag-critical">Critical</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion: Chemical Operations -->
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-left"><span class="acc-icon">⚗️</span><div class="acc-label"><div style="font-weight:700;">Chemical Operations — §7.10</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Storage, handling, GHS labeling</div></div></div>
+      <span class="acc-count">12 rules</span><span class="acc-arrow">▼</span>
+    </div>
+    <div class="acc-body">
+      <div class="rule-group"><div class="rule-group-title">👷 Human</div>
+        <div class="rule-item legal"><div class="rule-dot" style="background:#8e44ad;"></div><div>Basic chemical safety training; 3rd-party training per Decree 113/2017/NĐ-CP.</div><span class="rule-tag tag-legal">Legal</span></div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>No smoking, eating, drinking, or food storage in chemical areas. Drowsiness/breathing difficulties → evacuate immediately and report to Supervisor.</div><span class="rule-tag tag-banned">Banned</span></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">📋 Method</div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>Submit SDS + chemical import permit (if applicable) to owner before introducing chemicals to the area.</div><span class="rule-tag tag-mandatory">Mandatory</span></div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>Measure O₂ in poorly ventilated areas: 19.5%–23.5%. Chemical concentration must not exceed legal/international limits.</div><span class="rule-tag tag-required">Required</span></div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>Diluting acid: pour acid INTO water — NEVER the reverse. Do not mix reactive chemicals; keep ≥5m apart.</div><span class="rule-tag tag-mandatory">Mandatory</span></div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>Use metal containers only + anti-static grounding (except chemicals reactive with metal). Plastic jerry cans PROHIBITED.</div><span class="rule-tag tag-banned">Banned</span></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">📦 Material</div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>Full GHS label: product name, chemical name, hazard symbols, Signal Word, Hazard & Precautionary Statements.</div><span class="rule-tag tag-required">Required</span></div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>Metal containment (≥2.5mm) holding 100% of stored chemical volume at all times.</div><span class="rule-tag tag-required">Required</span></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">🚨 Emergency</div>
+        <div class="rule-item critical"><div class="rule-dot" style="background:#c0392b;"></div><div>Emergency shower + eyewash station (fixed or portable) at work area; inform all personnel before starting. Chemical spill/fire → stop work, move to emergency assembly point; chemical injury → first aid immediately, notify Safety Officer.</div><span class="rule-tag tag-critical">Critical</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion: Painting -->
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-left"><span class="acc-icon">🎨</span><div class="acc-label"><div style="font-weight:700;">Painting & Anti-rust — §7.19</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Paints, solvents, fire prevention</div></div></div>
+      <span class="acc-count">7 rules</span><span class="acc-arrow">▼</span>
+    </div>
+    <div class="acc-body">
+      <div class="rule-group"><div class="rule-group-title">👷 Human</div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>Wear chemical filter mask at all times when mixing and applying paint; appropriate chemical-resistant gloves.</div><span class="rule-tag tag-mandatory">Mandatory</span></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">📋 Method</div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>Work Permit required; inspect work area — NO Hot Work Class I within 11m radius of paint mixing/application area.</div><span class="rule-tag tag-permit">Permit</span></div>
+        <div class="rule-item mandatory"><div class="rule-dot" style="background:#e74c3c;"></div><div>Paint waste: dispose in owner-provided containers — NEVER pour on floor or into drains.</div><span class="rule-tag tag-banned">Banned</span></div>
+      </div>
+      <div class="rule-group"><div class="rule-group-title">📦 Material</div>
+        <div class="rule-item required"><div class="rule-dot" style="background:#2980b9;"></div><div>Fire extinguisher: Fire Rating ≥6A 20B, size ≥20 lbs — 1 per work point.</div><span class="rule-tag tag-required">Required</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     TAB 2 — PTW
+═══════════════════════════════════════════════════════ -->
+<div class="tab-content" id="tab1">
+  <!-- Hero -->
+  <div class="hero" style="background: linear-gradient(135deg,#922b21,#c0392b);">
+    <div class="hero-content">
+      <h1>📋 Permit to Work (PTW) Procedure</h1>
+      <p>Full lifecycle permit management at LSP — from package preparation through on-site approval, active work monitoring, and formal closure. Covering all high-risk work types.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">7</div><div class="hero-stat-lbl">Lifecycle Phases</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">8</div><div class="hero-stat-lbl">Special Work Types</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">1h</div><div class="hero-stat-lbl">Start Deadline</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">24h</div><div class="hero-stat-lbl">Max Validity</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Critical Alerts -->
+  <div class="alert alert-danger"><span class="alert-icon">🚫</span><div><strong>Critical Rule:</strong> The Permit Requester and Approver CANNOT be the same person in the same permit.</div></div>
+  <div class="alert alert-warn"><span class="alert-icon">⚠️</span><div><strong>Important:</strong> Contractors CANNOT act as Permit Requester at LSP. Critical Work requires a dedicated Contractor Safety (1:1 per job).</div></div>
+  <div class="alert alert-info"><span class="alert-icon">⏱️</span><div><strong>"1-Hour Rule":</strong> Work must start within 1 hour of PTW approval — otherwise Re-approval is required.</div></div>
+
+  <!-- Roles -->
+  <div class="section-label">👥 Roles & Responsibilities</div>
+  <div class="grid-3" style="margin-bottom:24px;">
+    <div class="role-card">
+      <div class="role-icon">🏛️</div>
+      <div class="role-name">HSSE Manager</div>
+      <ul class="role-duties">
+        <li>Review & update PTW procedure</li>
+        <li>Establish PTW training program & competency standards</li>
+        <li>Supervise & audit PTW system</li>
+      </ul>
+    </div>
+    <div class="role-card">
+      <div class="role-icon">📋</div>
+      <div class="role-name">PTW Document Approval Team</div>
+      <ul class="role-duties">
+        <li>Final approval of PTW</li>
+        <li>Review PTW + certificates before signing</li>
+        <li>Verify all safety conditions are in place</li>
+        <li>Right to reject if requirements not met</li>
+      </ul>
+    </div>
+    <div class="role-card">
+      <div class="role-icon">🔍</div>
+      <div class="role-name">PTW On-site Approval Team</div>
+      <ul class="role-duties">
+        <li>Field safety condition verification</li>
+        <li>Attend TBM, JSA/JICA talk</li>
+        <li>Monitor working conditions continuously</li>
+        <li>Stop work if unsafe conditions arise</li>
+      </ul>
+    </div>
+    <div class="role-card">
+      <div class="role-icon">📝</div>
+      <div class="role-name">Permit Requester (LSP Staff)</div>
+      <ul class="role-duties">
+        <li>Prepare full PTW Package (WMS + JSA/JICA)</li>
+        <li>Submit to Area Owner on time</li>
+        <li>Ensure contractor compliance</li>
+        <li>Cannot be same as Approver</li>
+      </ul>
+    </div>
+    <div class="role-card">
+      <div class="role-icon">🦺</div>
+      <div class="role-name">Contractor</div>
+      <ul class="role-duties">
+        <li>Deploy Contractor Safety (1:1 for Critical Work)</li>
+        <li>Non-critical: 1 Safety → max 3 jobs within 18m</li>
+        <li>Fire Watcher (Hot Work); Hole Watchman (CSE)</li>
+        <li>Daily health check for CSE & working at height >12m</li>
+      </ul>
+    </div>
+    <div class="role-card">
+      <div class="role-icon">⚡</div>
+      <div class="role-name">Authorized Employee</div>
+      <ul class="role-duties">
+        <li>Trained/authorized to implement safe practices</li>
+        <li>Authority to sign, audit, maintain monitoring equipment</li>
+        <li>Must be "competent" per required training</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PTW Phases -->
+  <div class="section-label">🔄 PTW Lifecycle — 7 Phases</div>
+  <div class="phase-grid" style="margin-bottom:24px;" id="phaseGrid">
+
+    <div class="phase-card">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-num" style="background:#1a5276;">A</div>
+        <div class="phase-info">
+          <div class="phase-title">Phase A — Prepare PTW Package</div>
+          <div class="phase-sub">§5.2.1 – 5.2.3 · WMS + JSA/JICA + Supporting Docs</div>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </div>
+      <div class="phase-body">
+        <div class="phase-step"><div class="phase-step-num" style="background:#1a5276;">1</div><div>Determine if work requires PTW (hot work, CSE, excavation, electrical, lifting…) — check mandatory work list §5.2.1.</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#1a5276;">2</div><div>Organize meeting to prepare WMS + JSA/JICA and control measures for all potential hazards.</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#1a5276;">3</div><div>Prepare PTW Package: WMS · JSA/JICA · Personnel/equipment list · Plot plan · Certificates (Lifting plan, Excavation, CSE, Rescue plan, Ventilation plan…).</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#1a5276;">4</div><div>Section/Dept Manager (Requester side) signs Section IV of PTW cover page to confirm review and approval for Requester to control activities.</div></div>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-num" style="background:#1e8449;">B</div>
+        <div class="phase-info">
+          <div class="phase-title">Phase B — Submit to Area Owner</div>
+          <div class="phase-sub">§5.2.4 · Submit 1 day in advance</div>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </div>
+      <div class="phase-body">
+        <div class="phase-step"><div class="phase-step-num" style="background:#1e8449;">1</div><div>PTW Package must be submitted to Area Owner <strong>1 day before</strong> scheduled work; urgent cases require Area Owner agreement.</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#1e8449;">2</div><div>Place PTW Package in correct PTW box (Area Owner / Submitted) at CCB (both Upstream & Downstream) to prevent loss/confusion.</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#1e8449;">3</div><div>All supporting docs (WMS, JSA, certificates) must be approved and registered in Gate Keeper meeting <strong>1 week in advance</strong> (per WMS workflow HS-D-2000-016).</div></div>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-num" style="background:#7d3c98;">C</div>
+        <div class="phase-info">
+          <div class="phase-title">Phase C — Document Approval</div>
+          <div class="phase-sub">§5.3 · Non-critical / Critical / Holiday approval</div>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </div>
+      <div class="phase-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+          <div style="background:#eaf4fb;border-radius:8px;padding:12px;font-size:13px;"><strong>📌 Non-Critical Work</strong><br>Approved by <strong>Section Manager</strong></div>
+          <div style="background:#fef5e7;border-radius:8px;padding:12px;font-size:13px;"><strong>🔶 Critical Work</strong><br>Approved by <strong>Shift Supervisor (US only)</strong> & <strong>Department Manager</strong></div>
+          <div style="background:#fdecea;border-radius:8px;padding:12px;font-size:13px;"><strong>🔴 Hot Work Class I & CSE — Holiday/Weekend</strong><br>Final approver: <strong>Manufacturing Director US/DS</strong></div>
+          <div style="background:#f4ecf7;border-radius:8px;padding:12px;font-size:13px;"><strong>🌙 Night Extension (6PM–6AM) — Hot Work I & CSE</strong><br>Final approver: <strong>Manufacturing Director US/DS</strong></div>
+        </div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#7d3c98;">1</div><div>Approver signs PTW & related documents · Assigns PTW number on cover page · Updates PTW log sheet.</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#7d3c98;">2</div><div>Online approval: Requester scans/photographs and sends via email/Line/Zalo; Approver replies "Approved/Rejected PTW No.…"; Requester prints and attaches as evidence.</div></div>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-num" style="background:#ca6f1e;">D</div>
+        <div class="phase-info">
+          <div class="phase-title">Phase D — On-site Approval + TBM/KYT</div>
+          <div class="phase-sub">§5.4 · Field verification + Toolbox Talk</div>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </div>
+      <div class="phase-body">
+        <div class="phase-step"><div class="phase-step-num" style="background:#ca6f1e;">1</div><div>Receive approved PTW & bring to site; apply mitigation measures per JSA.</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#ca6f1e;">2</div><div>On-site approval team inspects & confirms: safety conditions on site + signs JSA form HS-F-2000-009.</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#ca6f1e;">3</div><div>Conduct JSA + Toolbox Talk + KYT — work team understands and commits to steps, hazards, and controls.</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#ca6f1e;">4</div><div>Ensure permit is posted/available at the work location.</div></div>
+        <div class="alert alert-warn" style="margin-top:10px;margin-bottom:0;"><span class="alert-icon">⏱️</span><div><strong>1-Hour Rule:</strong> Work must start as soon as possible after approval. PTW becomes invalid if work does not begin within 1 hour — Re-approval required.</div></div>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-num" style="background:#117a65;">E</div>
+        <div class="phase-info">
+          <div class="phase-title">Phase E — Active Work Monitoring</div>
+          <div class="phase-sub">§5.5–5.6 · Continuous surveillance</div>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </div>
+      <div class="phase-body">
+        <div class="phase-step"><div class="phase-step-num" style="background:#117a65;">1</div><div>Requester notifies Permit Approver or Board Man of affected unit at start time; Approver/Board Man notifies related units.</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#117a65;">2</div><div>Continuous monitoring of safety measures under control of on-site approval team.</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#117a65;">3</div><div>HSSE/Task force audits PTW during work; violations recorded and sanctions applied per severity level.</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#117a65;">4</div><div>If conditions change → update WMS + JSA/JICA → re-approved by Authorized Person before continuing.</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#117a65;">5</div><div>Daily health check (CSE/working on temporary platform >12m): alcohol · blood pressure · temperature recorded in HS-F-2000-013.</div></div>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-num" style="background:#c0392b;">F</div>
+        <div class="phase-info">
+          <div class="phase-title">Phase F — Stop Work / Re-approval / Cancel</div>
+          <div class="phase-sub">§5.6 · Triggers and conditions</div>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </div>
+      <div class="phase-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+          <div>
+            <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;color:#c0392b;">🔁 Re-approval Required When:</div>
+            <ul style="font-size:13px;line-height:1.7;padding-left:16px;color:var(--text-muted);">
+              <li>Work not started within 1 hour of approval</li>
+              <li>Team member changes (Requester / Contractor Safety / Worker)</li>
+              <li>Stopped due to unsafe conditions that cannot be immediately fixed</li>
+              <li>Symptoms arise, JSA/JICA non-compliance, or risks outside JSA/JICA scope</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;color:#c0392b;">❌ PTW Cancelled When:</div>
+            <ul style="font-size:13px;line-height:1.7;padding-left:16px;color:var(--text-muted);">
+              <li>Plant-wide emergency alarm</li>
+              <li>Sudden unsafe condition change</li>
+              <li>Observed non-compliance with permit requirements</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-header" onclick="togglePhase(this)">
+        <div class="phase-num" style="background:#1a5276;">G</div>
+        <div class="phase-info">
+          <div class="phase-title">Phase G — Close & Archive Permit</div>
+          <div class="phase-sub">§5.8 · Site cleanup + signatures + record keeping</div>
+        </div>
+        <span class="acc-arrow">▼</span>
+      </div>
+      <div class="phase-body">
+        <div class="phase-step"><div class="phase-step-num" style="background:#1a5276;">1</div><div>Clean up site · Completion check · 5S check · Power off/shut down related equipment.</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#1a5276;">2</div><div>Sign RTO form (HS-F-2000-010) and sign permit closure on-site.</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#1a5276;">3</div><div>Collect all required signatures: Contractor Safety · Requester · Field Operator.</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#1a5276;">4</div><div>Update PTW log sheet · Return Original to HSSE · Verify document completeness.</div></div>
+        <div class="phase-step"><div class="phase-step-num" style="background:#1a5276;">5</div><div>Review PTW performance & feedback to relevant parties (if applicable) · Archive records.</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Validity -->
+  <div class="section-label">🗓️ PTW Validity Rules</div>
+  <div class="validity-grid" style="margin-bottom:24px;">
+    <div class="validity-item"><strong>Standard PTW</strong>Valid for 1 work shift; re-approval possible for next shift.</div>
+    <div class="validity-item" style="border-left-color:#c0392b;"><strong>Maximum Duration</strong>24 hours on the same day (including Re-approval + Re-validation).</div>
+    <div class="validity-item" style="border-left-color:#f39c12;"><strong>Extension Rules</strong>Only valid if safety conditions are maintained & incoming shift team is fully briefed. Re-submit before 3:00 PM. Extension classified as Critical Work.</div>
+    <div class="validity-item" style="border-left-color:#e74c3c;"><strong>Emergency Invalidation</strong>If conditions change due to emergency → permit becomes void → issue new permit before resuming.</div>
+  </div>
+
+  <!-- Special Work Types -->
+  <div class="section-label">⚠️ Special Work Requirements</div>
+  <div class="sw-grid" id="swGrid">
+    <div class="sw-card" onclick="toggleSW(this,'sw0')"><div class="sw-icon">🔥</div><div class="sw-name">Hot Work Class I & II</div></div>
+    <div class="sw-card" onclick="toggleSW(this,'sw1')"><div class="sw-icon">🕳️</div><div class="sw-name">Confined Space Entry</div></div>
+    <div class="sw-card" onclick="toggleSW(this,'sw2')"><div class="sw-icon">⚡</div><div class="sw-name">Electrical Work</div></div>
+    <div class="sw-card" onclick="toggleSW(this,'sw3')"><div class="sw-icon">⛏️</div><div class="sw-name">Excavation & Trenching</div></div>
+    <div class="sw-card" onclick="toggleSW(this,'sw4')"><div class="sw-icon">🏗️</div><div class="sw-name">Crane & Lifting</div></div>
+    <div class="sw-card" onclick="toggleSW(this,'sw5')"><div class="sw-icon">🧗</div><div class="sw-name">Working at Height</div></div>
+    <div class="sw-card" onclick="toggleSW(this,'sw6')"><div class="sw-icon">☢️</div><div class="sw-name">Radiation / Radiography</div></div>
+    <div class="sw-card" onclick="toggleSW(this,'sw7')"><div class="sw-icon">🌊</div><div class="sw-name">Diving / Over Water</div></div>
+  </div>
+
+  <!-- SW Detail Panels -->
+  <div class="sw-detail" id="sw0">
+    <div class="sw-detail-title">🔥 Hot Work Class I & II</div>
+    <div class="sw-req-item"><span class="sw-req-icon">🔴</span><div>Class I = higher risk; holiday/weekend & night extension approvals require Manufacturing Director.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">👁️</span><div>Fire Watcher required continuously during and after work (minimum 30 minutes after completion).</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">🔍</span><div>Isolate heat/ignition sources, gas test, barricade the area.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">🔨</span><div>Applies to: welding, flame cutting, grinding, etc. outside designated workshop areas.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">🏭</span><div>Workshop fabrication area: no PTW required but WMS, JSA, and fire protection plan are mandatory.</div></div>
+  </div>
+  <div class="sw-detail" id="sw1">
+    <div class="sw-detail-title">🕳️ Confined Space Entry (CSE)</div>
+    <div class="sw-req-item"><span class="sw-req-icon">🚪</span><div>Hole Watchman controlling entry/exit 100% of the time.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">💨</span><div>Gas test mandatory before and during work.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">📋</span><div>Prepare Rescue Plan and Ventilation Plan before entry.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">🔒</span><div>Full energy isolation (LOTO) before entry.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">❤️</span><div>Daily health check: alcohol · blood pressure · temperature — recorded in HS-F-2000-013.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">🌙</span><div>Holiday/weekend & night extension: Manufacturing Director is final approver.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">⛏️</span><div>Excavation >1.2m may be classified as Confined Space.</div></div>
+  </div>
+  <div class="sw-detail" id="sw2">
+    <div class="sw-detail-title">⚡ Electrical Work</div>
+    <div class="sw-req-item"><span class="sw-req-icon">⚠️</span><div>Special attention for HV (High Voltage) / live or energized equipment.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">🔒</span><div>Mandatory LOTO per HS-P-2000-002.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">👤</span><div>Authorized Person supervision required at all times.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">📄</span><div>Single line diagram & panel layout attached to PTW Package.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">📝</span><div>Live Electrical Certificate: HS-F-2000-008.</div></div>
+  </div>
+  <div class="sw-detail" id="sw3">
+    <div class="sw-detail-title">⛏️ Excavation & Trenching</div>
+    <div class="sw-req-item"><span class="sw-req-icon">📋</span><div>PTW mandatory for excavation depth >15 cm.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">🏗️</span><div>Shoring/sloping and barricade around the excavation required.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">🕳️</span><div>Excavation >1.2m may be classified as Confined Space — apply CSE requirements.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">🔍</span><div>Check underground utilities before excavating.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">📝</span><div>Excavation Certificate (HS-F-2000-005) must be attached.</div></div>
+  </div>
+  <div class="sw-detail" id="sw4">
+    <div class="sw-detail-title">🏗️ Crane & Lifting Operations</div>
+    <div class="sw-req-item"><span class="sw-req-icon">📋</span><div>Prepare and attach Lifting Plan Certificate (HS-F-2000-004).</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">🧺</span><div>Man basket operation: separate PTW required; 1 person in basket controlling at all times.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">⚓</span><div>Marine lifting: approved by Senior Level Person/Permit Issuer; full checklist & authorization signatures required.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">👷</span><div>Certified Rigger/Signal Man must be assigned.</div></div>
+  </div>
+  <div class="sw-detail" id="sw5">
+    <div class="sw-detail-title">🧗 Working at Height</div>
+    <div class="sw-req-item"><span class="sw-req-icon">📏</span><div>Applies to work at height >1.8m above ground.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">❤️</span><div>Daily health check for work on temporary platform >12m.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">📋</span><div>Daily Manlift checklist (HS-F-2000-015) when using manlift.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">📝</span><div>Working at Height Certificate: HS-F-2000-007.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">🔩</span><div>Floor/grating/handrail removal: mandatory PTW to ensure replacement fall controls.</div></div>
+  </div>
+  <div class="sw-detail" id="sw6">
+    <div class="sw-detail-title">☢️ Radiation / Radiography Work</div>
+    <div class="sw-req-item"><span class="sw-req-icon">🚧</span><div>Establish exclusion zone with barricade and full warning signs.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">🕐</span><div>Scheduled outside working hours to minimize personnel exposure.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">📝</span><div>Radiation Certificate (HS-F-2000-006) must be attached.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">🎓</span><div>Only personnel with radiation certification may participate.</div></div>
+  </div>
+  <div class="sw-detail" id="sw7">
+    <div class="sw-detail-title">🌊 Diving Operations / Work Over Water</div>
+    <div class="sw-req-item"><span class="sw-req-icon">⚓</span><div>Includes: marine jetty excavation/construction, marine lifting, work on water surface.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">👤</span><div>Approved by Senior Level Person / Permit Issuer.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">📋</span><div>Full checklist & authorization signatures must be attached.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">🎓</span><div>All personnel in marine activities must complete basic safety training.</div></div>
+    <div class="sw-req-item"><span class="sw-req-icon">📝</span><div>PTW with JSA/JICA, WMS, and separate permit authorization required.</div></div>
+  </div>
+
+  <!-- RACI Table -->
+  <div class="section-label">📊 RACI Summary by Phase</div>
+  <div class="tbl-wrap" style="margin-bottom:24px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Phase / Activity</th>
+          <th>Requester</th>
+          <th>Approver</th>
+          <th>Contractor</th>
+          <th>HSSE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>A. Prepare WMS + JSA/JICA + PTW Package</td><td class="raci-cell raci-r"><span class="raci-pill raci-r">R</span></td><td class="raci-cell raci-c"><span class="raci-pill raci-c">C</span></td><td class="raci-cell raci-c"><span class="raci-pill raci-c">C</span></td><td class="raci-cell raci-c"><span class="raci-pill raci-c">C</span></td></tr>
+        <tr><td>B. Submit PTW to Area Owner</td><td class="raci-cell raci-r"><span class="raci-pill raci-r">R</span></td><td class="raci-cell raci-c"><span class="raci-pill raci-c">C</span></td><td class="raci-cell raci-i"><span class="raci-pill raci-i">I</span></td><td class="raci-cell raci-i"><span class="raci-pill raci-i">I</span></td></tr>
+        <tr><td>C. Document Approval</td><td class="raci-cell raci-c"><span class="raci-pill raci-c">C</span></td><td class="raci-cell raci-a"><span class="raci-pill raci-a">A</span></td><td class="raci-cell raci-i"><span class="raci-pill raci-i">I</span></td><td class="raci-cell raci-c"><span class="raci-pill raci-c">C</span></td></tr>
+        <tr><td>D. On-site Approval + TBM/KYT</td><td class="raci-cell raci-r"><span class="raci-pill raci-r">R</span></td><td class="raci-cell raci-a"><span class="raci-pill raci-a">A</span></td><td class="raci-cell raci-r"><span class="raci-pill raci-r">R</span></td><td class="raci-cell raci-c"><span class="raci-pill raci-c">C</span></td></tr>
+        <tr><td>E. Monitoring During Work</td><td class="raci-cell raci-a"><span class="raci-pill raci-a">A</span></td><td class="raci-cell raci-i"><span class="raci-pill raci-i">I</span></td><td class="raci-cell raci-r"><span class="raci-pill raci-r">R</span></td><td class="raci-cell raci-a"><span class="raci-pill raci-a">A</span></td></tr>
+        <tr><td>F. Stop Work / Re-approval / Cancel</td><td class="raci-cell raci-r"><span class="raci-pill raci-r">R</span></td><td class="raci-cell raci-a"><span class="raci-pill raci-a">A</span></td><td class="raci-cell raci-r"><span class="raci-pill raci-r">R</span></td><td class="raci-cell raci-r"><span class="raci-pill raci-r">R</span></td></tr>
+        <tr><td>G. Close Permit + Archive</td><td class="raci-cell raci-r"><span class="raci-pill raci-r">R</span></td><td class="raci-cell raci-a"><span class="raci-pill raci-a">A</span></td><td class="raci-cell raci-c"><span class="raci-pill raci-c">C</span></td><td class="raci-cell raci-i"><span class="raci-pill raci-i">I</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;">
+    <span><span class="raci-pill raci-r" style="display:inline-block;">R</span> Responsible</span>
+    <span><span class="raci-pill raci-a" style="display:inline-block;">A</span> Accountable</span>
+    <span><span class="raci-pill raci-c" style="display:inline-block;">C</span> Consulted</span>
+    <span><span class="raci-pill raci-i" style="display:inline-block;">I</span> Informed</span>
+  </div>
+
+  <!-- Reference Forms -->
+  <div class="section-label">📚 Reference Documents & Forms</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><div class="dot" style="background:#0a3d62;"></div>Corporate Standards</div>
+      <ul style="font-size:13px;line-height:2;color:var(--text-muted);padding-left:16px;">
+        <li>📘 SD-PS-S-0305: Permit to Work Corporate Standard</li>
+        <li>📘 SD-PS-S-0302: Lock Out and Tag Out Corporate Standard</li>
+        <li>📘 SD-PS-S-0304: Confined Space Entry Corporate Standard</li>
+        <li>📘 SD-PS-S-0004: Job Safety Analysis Corporate Standard</li>
+        <li>📋 LSP 9 Life Saving Rules</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title"><div class="dot" style="background:#1e8449;"></div>Key Forms (HS-F-2000-XXX)</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:12px;color:var(--text-muted);">
+        <div>📝 -001: General PTW Form</div>
+        <div>📝 -002: Hot Work Class I Certificate</div>
+        <div>📝 -003: CSE Certificate</div>
+        <div>📝 -004: Lifting Plan Certificate</div>
+        <div>📝 -005: Excavation Certificate</div>
+        <div>📝 -006: Radiation Certificate</div>
+        <div>📝 -007: Working at Height Certificate</div>
+        <div>📝 -008: Live Electrical Certificate</div>
+        <div>📝 -009: JSA/JICA Form</div>
+        <div>📝 -010: Return to Operation Form</div>
+        <div>📝 -011: Ventilation Plan</div>
+        <div>📝 -012: Rescue Plan Format</div>
+        <div>📝 -013: Daily Health Monitoring Record</div>
+        <div>📝 -014: CSE Entry-Exit Log Sheet</div>
+        <div>📝 -015: Daily Manlift Checklist</div>
+        <div>📝 -016: Deviation Form</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     TAB 3 — PSM OVERVIEW
+═══════════════════════════════════════════════════════ -->
+<div class="tab-content" id="tab2">
+  <!-- Hero -->
+  <div class="hero" style="background: linear-gradient(135deg,#145a32,#1e8449);">
+    <div class="hero-content">
+      <h1>⚙️ Process Safety Management (PSM)</h1>
+      <p>Application of management systems and controls to identify, understand, and control process hazards — preventing catastrophic incidents and protecting people, assets, and the environment.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">14</div><div class="hero-stat-lbl">PSM Elements</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-lbl">Pillars</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">70%</div><div class="hero-stat-lbl">Learning via Practice</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">0</div><div class="hero-stat-lbl">Target Incidents</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why PSM -->
+  <div class="section-label">❓ Why PSM is Needed</div>
+  <div class="grid-4" style="margin-bottom:24px;">
+    <div class="card" style="border-top:3px solid #e74c3c;">
+      <div style="font-size:24px;margin-bottom:10px;">📋</div>
+      <div style="font-weight:700;margin-bottom:6px;font-size:13.5px;">Outdated Procedures</div>
+      <div style="font-size:12px;color:var(--text-muted);line-height:1.6;">Operating/emergency procedures insufficient or not updated in time.</div>
+    </div>
+    <div class="card" style="border-top:3px solid #f39c12;">
+      <div style="font-size:24px;margin-bottom:10px;">🔧</div>
+      <div style="font-weight:700;margin-bottom:6px;font-size:13.5px;">Non-conforming Equipment</div>
+      <div style="font-size:12px;color:var(--text-muted);line-height:1.6;">Equipment changes not approved or designed to incorrect standards.</div>
+    </div>
+    <div class="card" style="border-top:3px solid #8e44ad;">
+      <div style="font-size:24px;margin-bottom:10px;">🎓</div>
+      <div style="font-weight:700;margin-bottom:6px;font-size:13.5px;">Insufficient Training</div>
+      <div style="font-size:12px;color:var(--text-muted);line-height:1.6;">Inadequate job competency, poor supervision, lack of process technology understanding.</div>
+    </div>
+    <div class="card" style="border-top:3px solid #1a5276;">
+      <div style="font-size:24px;margin-bottom:10px;">🔍</div>
+      <div style="font-weight:700;margin-bottom:6px;font-size:13.5px;">Poor Maintenance</div>
+      <div style="font-size:12px;color:var(--text-muted);line-height:1.6;">Inadequate inspection/maintenance programs leading to unexpected equipment failure.</div>
+    </div>
+  </div>
+
+  <!-- 3 Pillars + 14 Elements -->
+  <div class="section-label">🏛️ Three Pillars & 14 PSM Elements</div>
+
+  <!-- Technology Pillar -->
+  <div style="margin-bottom:20px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="background:#1a5276;color:white;padding:6px 16px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:0.5px;">⚙️ PILLAR 1 — TECHNOLOGY</div>
+    </div>
+    <div class="grid-4">
+      <div class="psm-element pillar-tech">
+        <div class="psm-el-num">1</div>
+        <div class="psm-el-name">Process Safety Information (PSI)</div>
+        <div class="psm-el-desc">Foundation for identifying & understanding hazards. Covers material hazards, process design basis, and equipment design basis. Must be documented and updated periodically.</div>
+      </div>
+      <div class="psm-element pillar-tech">
+        <div class="psm-el-num">2</div>
+        <div class="psm-el-name">Process Hazards Analysis (PHA)</div>
+        <div class="psm-el-desc">Combines science, skill, and judgment to identify, evaluate, and control significant hazards. Basis for tracking recommendations and communicating to stakeholders.</div>
+      </div>
+      <div class="psm-element pillar-tech">
+        <div class="psm-el-num">3</div>
+        <div class="psm-el-name">Operating Procedures & Safe Practices (SOP/SWP)</div>
+        <div class="psm-el-desc">SOP: clear operating procedures — startup, normal, temporary, emergency, shutdown. SWP: permit system for non-routine work (LOTO, hot work, confined space…).</div>
+      </div>
+      <div class="psm-element pillar-tech">
+        <div class="psm-el-num">4</div>
+        <div class="psm-el-name">Management of Technology Change (MOC-T)</div>
+        <div class="psm-el-desc">System to analyze & review technology changes, identify potential hazards, and ensure training is updated before changes take effect.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Facilities Pillar -->
+  <div style="margin-bottom:20px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="background:#1e8449;color:white;padding:6px 16px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:0.5px;">🏗️ PILLAR 2 — FACILITIES</div>
+    </div>
+    <div class="grid-4">
+      <div class="psm-element pillar-fac">
+        <div class="psm-el-num" style="background:#1e8449;">5</div>
+        <div class="psm-el-name">Quality Assurance (QA)</div>
+        <div class="psm-el-desc">Ensures equipment, materials, and services meet appropriate technical standards. Covers quality control from design, procurement, construction to maintenance.</div>
+      </div>
+      <div class="psm-element pillar-fac">
+        <div class="psm-el-num" style="background:#1e8449;">6</div>
+        <div class="psm-el-name">Pre-Startup Safety Review (PSSR)</div>
+        <div class="psm-el-desc">Ensures all management systems are ready before introducing material into a process. Applied for new facilities or after significant modifications. Performed by multi-functional team.</div>
+      </div>
+      <div class="psm-element pillar-fac">
+        <div class="psm-el-num" style="background:#1e8449;">7</div>
+        <div class="psm-el-name">Mechanical Integrity (MI)</div>
+        <div class="psm-el-desc">Ensures mechanical integrity of pressure vessels, relief systems, piping… through periodic inspection, testing, and maintenance with full documentation.</div>
+      </div>
+      <div class="psm-element pillar-fac">
+        <div class="psm-el-num" style="background:#1e8449;">8</div>
+        <div class="psm-el-name">Management of Change – Facilities (MOC-F)</div>
+        <div class="psm-el-desc">Manages subtle facility changes — seemingly minor modifications that may impact safety if not properly controlled.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Personnel Pillar -->
+  <div style="margin-bottom:24px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="background:#7d3c98;color:white;padding:6px 16px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:0.5px;">👷 PILLAR 3 — PERSONNEL</div>
+    </div>
+    <div class="grid-3">
+      <div class="psm-element pillar-per">
+        <div class="psm-el-num" style="background:#7d3c98;">9</div>
+        <div class="psm-el-name">Training and Performance</div>
+        <div class="psm-el-desc">70:20:10 model (practice/mentoring/classroom). Refresher training max every 3 years. Personnel must meet "Fit for duty" standard.</div>
+      </div>
+      <div class="psm-element pillar-per">
+        <div class="psm-el-num" style="background:#7d3c98;">10</div>
+        <div class="psm-el-name">Contractor Safety Management (CSM)</div>
+        <div class="psm-el-desc">Clear responsibility for selecting, verifying, and managing contractors/partners to ensure consistency and eliminate/prevent contractor-related incidents.</div>
+      </div>
+      <div class="psm-element pillar-per">
+        <div class="psm-el-num" style="background:#7d3c98;">11</div>
+        <div class="psm-el-name">Incident Investigation (II)</div>
+        <div class="psm-el-desc">Actively and thoroughly investigate all serious incidents via a 13-step process — from initial report to CA/PA recommendations and record keeping.</div>
+      </div>
+      <div class="psm-element pillar-per">
+        <div class="psm-el-num" style="background:#7d3c98;">12</div>
+        <div class="psm-el-name">Management of Personnel Change (MOC-P)</div>
+        <div class="psm-el-desc">Applied for promotions/transfers, resignations, illness/death, workforce reductions. Ensures minimum required competency/experience level is maintained.</div>
+      </div>
+      <div class="psm-element pillar-per">
+        <div class="psm-el-num" style="background:#7d3c98;">13</div>
+        <div class="psm-el-name">Emergency Planning & Response (EPR)</div>
+        <div class="psm-el-desc">In-depth planning: risk analysis, response strategies, EPR plan, training & drills. Coordination between plant and community.</div>
+      </div>
+      <div class="psm-element pillar-per">
+        <div class="psm-el-num" style="background:#7d3c98;">14</div>
+        <div class="psm-el-name">Auditing</div>
+        <div class="psm-el-desc">Periodic audits to verify compliance and implement corrective actions. Identifies system weaknesses and continuously improves safety performance.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Historical Incidents -->
+  <div class="section-label">📖 Key Historical Incidents — Lessons Learned</div>
+  <div class="tbl-wrap" style="margin-bottom:24px;">
+    <table>
+      <thead>
+        <tr><th>#</th><th>Incident</th><th>Location & Year</th><th>Facility Type</th><th>Root Cause</th><th>Impact</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1</strong></td>
+          <td><strong>Piper Alpha</strong></td>
+          <td>North Sea, Scotland · 1988</td>
+          <td>Oil rig</td>
+          <td>Gas leak, chain fire/explosion, 106+ safety failures</td>
+          <td><span class="incident-sev sev-critical">💀 167 deaths</span></td>
+        </tr>
+        <tr>
+          <td><strong>2</strong></td>
+          <td><strong>BP Texas City</strong></td>
+          <td>Texas, USA · 2005</td>
+          <td>Oil refinery</td>
+          <td>Sensor failure, procedure violations, poor leadership</td>
+          <td><span class="incident-sev sev-critical">💀 15 deaths · 170+ injured</span></td>
+        </tr>
+        <tr>
+          <td><strong>3</strong></td>
+          <td><strong>Qinghe Steel</strong></td>
+          <td>China · 2007</td>
+          <td>Steel production</td>
+          <td>Molten steel ladle fell, poor safety procedures</td>
+          <td><span class="incident-sev sev-critical">💀 32 deaths</span></td>
+        </tr>
+        <tr>
+          <td><strong>4</strong></td>
+          <td><strong>T2 Laboratories</strong></td>
+          <td>Florida, USA · 2007</td>
+          <td>Specialty chemicals</td>
+          <td>Reactor rupture, insufficient process technology training</td>
+          <td><span class="incident-sev sev-major">💀 4 deaths · 14 injured</span></td>
+        </tr>
+        <tr>
+          <td><strong>5</strong></td>
+          <td><strong>Imperial Sugar</strong></td>
+          <td>Georgia, USA · 2008</td>
+          <td>Sugar mill</td>
+          <td>Static electricity ignited fine sugar dust</td>
+          <td><span class="incident-sev sev-major">💀 8 deaths · 42 injured</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="alert alert-warn"><span class="alert-icon">⚠️</span><div><strong>Common Lesson:</strong> Incidents occur across many industries. Small scale does not mean low risk. PSM must be applied based on hazard level — not just to satisfy regulations.</div></div>
+
+  <!-- Capability Levels -->
+  <div class="section-label">📈 PSM Capability Development Journey</div>
+  <div style="display:flex;flex-direction:column;gap:12px;max-width:760px;">
+    <div class="card" style="padding:16px 20px;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="font-size:28px;">👀</div>
+        <div style="flex:1;">
+          <div style="font-weight:700;font-size:14px;">Level 1 — Awareness</div>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Basic understanding of PSM, its purpose and importance.</div>
+          <div class="cap-bar-wrap"><div class="cap-bar-bg"><div class="cap-bar-fill" style="width:20%;background:#e74c3c;"></div></div></div>
+        </div>
+        <div style="font-size:18px;font-weight:800;color:#e74c3c;min-width:36px;text-align:right;">20%</div>
+      </div>
+    </div>
+    <div class="card" style="padding:16px 20px;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="font-size:28px;">📚</div>
+        <div style="flex:1;">
+          <div style="font-weight:700;font-size:14px;">Level 2 — Knowledge</div>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Deep understanding of each PSM element and connections between components.</div>
+          <div class="cap-bar-wrap"><div class="cap-bar-bg"><div class="cap-bar-fill" style="width:40%;background:#f39c12;"></div></div></div>
+        </div>
+        <div style="font-size:18px;font-weight:800;color:#f39c12;min-width:36px;text-align:right;">40%</div>
+      </div>
+    </div>
+    <div class="card" style="padding:16px 20px;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="font-size:28px;">🛠️</div>
+        <div style="flex:1;">
+          <div style="font-weight:700;font-size:14px;">Level 3 — Skill</div>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Beginning practical application in the workplace, accumulating experience.</div>
+          <div class="cap-bar-wrap"><div class="cap-bar-bg"><div class="cap-bar-fill" style="width:65%;background:#2980b9;"></div></div></div>
+        </div>
+        <div style="font-size:18px;font-weight:800;color:#2980b9;min-width:36px;text-align:right;">65%</div>
+      </div>
+    </div>
+    <div class="card" style="padding:16px 20px;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="font-size:28px;">🎯</div>
+        <div style="flex:1;">
+          <div style="font-weight:700;font-size:14px;">Level 4 — Subject Matter Expert (SME)</div>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Train and mentor others, mastering practical PSM application.</div>
+          <div class="cap-bar-wrap"><div class="cap-bar-bg"><div class="cap-bar-fill" style="width:85%;background:#1e8449;"></div></div></div>
+        </div>
+        <div style="font-size:18px;font-weight:800;color:#1e8449;min-width:36px;text-align:right;">85%</div>
+      </div>
+    </div>
+    <div class="card" style="padding:16px 20px;border:2px solid #1a5276;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="font-size:28px;">🏆</div>
+        <div style="flex:1;">
+          <div style="font-weight:700;font-size:14px;">Level 5 — Expert</div>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Lead safety culture and champion PSM capability across the entire organization.</div>
+          <div class="cap-bar-wrap"><div class="cap-bar-bg"><div class="cap-bar-fill" style="width:100%;background:#0a3d62;"></div></div></div>
+        </div>
+        <div style="font-size:18px;font-weight:800;color:#0a3d62;min-width:36px;text-align:right;">100%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Note -->
+  <div style="margin-top:24px;padding:16px 20px;background:#fafcff;border-radius:10px;border:1px solid var(--border);font-size:12px;color:var(--text-muted);text-align:center;">
+    PSM Awareness Training Reference · SCGC × Long Son Petrochemicals · <strong>CONFIDENTIAL — Internal Use Only</strong>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<div style="background:#0a3d62;color:rgba(255,255,255,0.6);text-align:center;padding:18px 24px;font-size:12px;margin-top:40px;">
+  Long Son Petrochemicals Co., Ltd. · HSSE Department · Internal Use Only · 2025
+  <span style="margin:0 12px;">|</span>
+  HS-D-2000-006 · HS-P-2000-001 · PSM Awareness Training
+</div>
+
+<script>
+  // ── Tab switching
+  function switchTab(idx) {
+    document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
+    document.querySelectorAll('.tab-content').forEach((c,i) => c.classList.toggle('active', i===idx));
+  }
+
+  // ── Accordion toggle (OHS)
+  function toggleAcc(header) {
+    const body = header.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    header.classList.toggle('open', !isOpen);
+  }
+
+  // ── Phase toggle (PTW)
+  function togglePhase(header) {
+    const body = header.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    const arrow = header.querySelector('.acc-arrow');
+    if(arrow) arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
+  }
+
+  // ── Special Work toggle (PTW)
+  let activeSW = null;
+  function toggleSW(card, id) {
+    const detail = document.getElementById(id);
+    const allDetails = document.querySelectorAll('.sw-detail');
+    const allCards = document.querySelectorAll('.sw-card');
+    if(activeSW === id) {
+      detail.classList.remove('open');
+      card.style.borderColor = '';
+      card.style.background = '';
+      activeSW = null;
+    } else {
+      allDetails.forEach(d => d.classList.remove('open'));
+      allCards.forEach(c => { c.style.borderColor=''; c.style.background=''; });
+      detail.classList.add('open');
+      card.style.borderColor = '#c0392b';
+      card.style.background = '#fdecea';
+      activeSW = id;
+      setTimeout(() => detail.scrollIntoView({behavior:'smooth',block:'nearest'}), 50);
+    }
+  }
+
+  // ── Resize handler (responsive)
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {}, 150);
+  });
+</script>
+
+							<script>
+                            	
+							</script>
+                        </body>
+                        </html>
+                    
